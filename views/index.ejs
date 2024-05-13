@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs") %>
+
+  <!-- Check if both 'adjective' and 'noun' variables are available -->
+  <% if (locals.adjective && locals.noun) { %>
+    <h1>
+      <%= adjective %>
+        <%= noun %>
+    </h1>
+    <% } else { %>
+      <!-- If variables aren't available, display a default welcome message -->
+      <h1>Welcome to the Team Generator 🤟</h1>
+      <% } %>
+
+        <!-- Form for submitting a POST request to generate a new team name -->
+        <form action="/submit" method="POST">
+          <input type="submit" value="Generate Name">
+        </form>
+
+<%- include("partials/footer.ejs") %>
